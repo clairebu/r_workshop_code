@@ -23,8 +23,14 @@ calculate_monthly_avg <- function(data) {
     summarize(avg_solar = mean(Solar.R, na.rm = TRUE))
 }
 
+# call function and store result
 monthly_averages <- calculate_monthly_avg(data)
 print(monthly_averages)
+
+monthly_averages <- monthly_averages %>%
+  mutate(month_name = paste("avg_solar_", month.name[Month], sep = ""))
+print(monthly_averages)
+
 # Calculating average and print to console
 avg_solar_May <- avg_solar_May/31
 print(paste("Average Solar Radiation for May: ", avg_solar_May))
