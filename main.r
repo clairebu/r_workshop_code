@@ -1,6 +1,7 @@
 # Loading necessary libraries
 library(ggplot2)
 
+
 # Fetching data
 data <- airquality
 
@@ -14,20 +15,16 @@ avg_solar_July <- 0
 avg_solar_August <- 0
 avg_solar_September <- 0
 
-for (i in 1:nrow(data)) {
-    if (data$Month[i] == 5) {
-        avg_solar_May <- avg_solar_May + data$Solar.R[i]
-    } else if (data$Month[i] == 6) {
-        avg_solar_June <- avg_solar_June + data$Solar.R[i]
-    } else if (data$Month[i] == 7) {
-        avg_solar_July <- avg_solar_July + data$Solar.R[i]
-    } else if (data$Month[i] == 8) {
-        avg_solar_August <- avg_solar_August + data$Solar.R[i]
-    } else {
-        avg_solar_September <- avg_solar_September + data$Solar.R[i]
-    }
+# Function to calculate monthly average solar radiation
+calculate_monthly_avg <- function(data) {
+  data %>%
+    # Group the data by Month and calculate the mean Solar.R for each group
+    group_by(Month) %>%
+    summarize(avg_solar = mean(Solar.R, na.rm = TRUE))
 }
 
+monthly_averages <- calculate_monthly_avg(data)
+print(monthly_averages)
 # Calculating average and print to console
 avg_solar_May <- avg_solar_May/31
 print(paste("Average Solar Radiation for May: ", avg_solar_May))
