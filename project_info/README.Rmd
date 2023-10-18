@@ -1,0 +1,57 @@
+# Air Quality Analysis with R
+
+## Overview
+
+This R script analyzes the airquality dataset in R, specifically focusing on the correlation between ozone and solar radiation for each month. The script performs data cleaning, calculates monthly average solar radiation, prints average values, computes correlations, visualizes the correlation results, and saves both plots and the cleaned data.
+
+## Usage
+
+1.  **Install Required Packages**
+
+    Make sure you have the necessary R packages installed. You can install them using:
+
+    ``` r
+    install.packages(c("ggplot2", "dplyr"))
+    ```
+
+2.  **Run the Script**
+
+    Execute the R script `airquality_analysis.R` to perform the analysis. You can run it in R or RStudio.
+
+    ``` r
+    source("airquality_analysis.R")
+    ```
+
+3.  **Generated Output**
+
+    -   The script will clean the data by removing rows with missing values.
+    -   It calculates monthly average solar radiation and prints the results.
+    -   Correlation values for ozone and solar radiation are computed and printed for the specified months (5 to 9).
+    -   The script generates correlation plots for each month, using different plot shapes based on the strength of correlation.
+    -   Plots are saved in the `plots/` directory with filenames like `plot_month.png`.
+    -   The cleaned data is saved as a CSV file named `cleaned_data.csv`.
+
+## File Structure
+
+-   `airquality_analysis.R`: Main R script for analyzing air quality data.
+-   `plots/`: Directory containing the generated correlation plots.
+-   `cleaned_data.csv`: CSV file containing the cleaned data.
+
+## Dependencies
+
+-   `ggplot2`: For creating the correlation plots.
+-   `dplyr`: For data manipulation.
+
+## Data Source
+
+The analysis is performed on the built-in `airquality` dataset in R.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Author
+
+Claire
+
+Feel free to customize the template further or let me know if you have any specific details you'd like to add or modify.
