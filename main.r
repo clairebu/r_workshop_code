@@ -14,6 +14,8 @@ avg_solar_July <- 0
 avg_solar_August <- 0
 avg_solar_September <- 0
 
+# adding comment
+
 for (i in 1:nrow(data)) {
     if (data$Month[i] == 5) {
         avg_solar_May <- avg_solar_May + data$Solar.R[i]
